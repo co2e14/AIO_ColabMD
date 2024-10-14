@@ -1,0 +1,5 @@
+mamba install -c conda-forge ambertools -y
+pip -q install py3Dmol
+pip install git+https://github.com/pablo-arantes/biopandas
+mamba install openmm=7.7.0
+pip install --upgrade MDAnalysis==2.4.2
