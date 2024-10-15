@@ -1,4 +1,5 @@
 import subprocess
+import argparse
 import sys
 from biopandas.pdb import PandasPdb
 import os
@@ -18,7 +19,12 @@ from MDAnalysis.analysis import align
 
 #######################################
 
-Query_PDB_ID = '6TKD' 
+parseflag = argparse.ArgumentParser(description="speedy MD")
+parseflag.add_argument("-p", "--pdbid",type=str, default="6fax", help="PDBID to run MD sim on")
+
+args = parseflag.parse_args()
+
+Query_PDB_ID = str(args.pdbid)
 query_PDB = Query_PDB_ID
 workDir = f'{Query_PDB_ID}_output'
 if not os.path.exists(workDir):
@@ -636,7 +642,7 @@ Equilibrated_PDB = f'{Query_PDB_ID}_equil.pdb'
 Jobname = f"{Query_PDB_ID}_prod" 
 Skip = "1" 
 stride_traj = Skip
-Output_format = "dcd" #"dcd", "pdb", "trr", "xtc"
+Output_format = "pdb" #"dcd", "pdb", "trr", "xtc"
 first_stride = "1" 
 Number_of_strides = "1" 
 nstride = int(Number_of_strides)
