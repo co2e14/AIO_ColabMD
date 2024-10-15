@@ -145,8 +145,7 @@ source leaprc.GLYCAM_06j-1
 source leaprc.gaff2
 source """  + str(water) + "\n"
 """SYS = loadpdb """  + str(starting_end) + "\n"
-"""alignaxes SYS
-savepdb SYS """ + str(pdb_nw) + "\n"
+"""savepdb SYS """ + str(pdb_nw) + "\n"
 """saveamberparm SYS """ + str(top_nw) + " " + str(crd_nw) + "\n"
 """solvatebox SYS """ + str(water_box) + " " + str(size_box) +  """ 0.7
 saveamberparm SYS """ + str(top) + " " + str(crd) + "\n"
@@ -205,8 +204,7 @@ source leaprc.GLYCAM_06j-1
 source leaprc.gaff2
 source """  + str(water) + "\n"
 """SYS = loadpdb """  + str(starting_end) + "\n"
-"""alignaxes SYS
-check SYS
+"""check SYS
 charge SYS
 addions SYS """ + str(pos_neut) + "\n"
 """addions SYS Cl- 0
